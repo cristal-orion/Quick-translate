@@ -1,0 +1,26 @@
+[package]
+name = "quick-translate-rust"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "quick-translate-popup"
+path = "src/main.rs"
+
+[[bin]]
+name = "quick-translate"
+path = "src/app.rs"
+
+[dependencies]
+tokio = { version = "1.42", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+notify-rust = "4.11"
+dotenv = "0.15"
+anyhow = "1.0"
+dirs = "5.0"
+ksni = { version = "0.3", features = ["blocking"] }
+gtk4 = "0.9"
+glib = "0.20"
+gdk4 = "0.9"
