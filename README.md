@@ -2,6 +2,9 @@
 
 Alternativa a DeepL per Linux (Wayland/GNOME) scritta in Rust con GTK4. Usa le API Groq per traduzioni ultra-veloci.
 
+![App Desktop](screenshot-desktop.png)
+![Popup Rapido](screenshot-popup.png)
+
 ## Caratteristiche
 
 - **Popup rapido** - Copia del testo, premi `Ctrl+Alt+G`, ottieni la traduzione in un popup vicino al cursore
@@ -78,6 +81,8 @@ L'app si avvia nel system tray. Clicca sull'icona per aprire/chiudere la finestr
 2. Premi **Ctrl+Alt+G**
 3. La traduzione appare in un popup e viene copiata nella clipboard
 4. Incolla con `Ctrl+V`
+
+> **Nota:** A differenza di DeepL che usa `Ctrl+C+C`, questa app usa `Ctrl+Alt+G` perché la combinazione `Ctrl+C+C` causava problemi di conflitto con la clipboard su Wayland.
 
 La scorciatoia va configurata manualmente in GNOME:
 
