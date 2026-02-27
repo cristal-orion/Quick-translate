@@ -258,9 +258,12 @@ fn build_ui(app: &Application, translation: &str, mouse_x: i32, mouse_y: i32) {
     });
     window.add_controller(key_controller);
 
-    // Chiudi dopo 8 secondi automaticamente
+    // Chiudi automaticamente in base alla lunghezza del testo
+    // ~200 parole/minuto = ~3.3 parole/secondo, minimo 5 secondi
+    let word_count = translation.split_whitespace().count() as u32;
+    let seconds = (word_count / 3).max(5);
     let win_clone = window.clone();
-    glib::timeout_add_seconds_local_once(8, move || {
+    glib::timeout_add_seconds_local_once(seconds, move || {
         win_clone.close();
     });
 
